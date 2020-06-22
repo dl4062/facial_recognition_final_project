@@ -1,3 +1,5 @@
+## will need to import the base64 module to convert jpg picture files to base64 (which is the format that is readable by the luxand.cloud API)
+
 import os
 
 import requests
@@ -26,8 +28,8 @@ response = requests.request("POST", url, data=payload, headers=headers)
 
 print(response.text)
 
-'''
 
+'''
 
 ## connecting code to folder stucture where picture data sits
 
@@ -47,6 +49,6 @@ while os.path.exists(os.path.join(data, choice)) == False:
     else:
         break
 
-print(choice)
+print(choice)  
 
 '''
