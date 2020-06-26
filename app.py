@@ -9,15 +9,26 @@ load_dotenv()
 
 
 
+#!/usr/bin/env python3
+from luxand import luxand
+
+client = luxand("60b245580ee045ad903d392d5d960f34")
+
+result = client.detect(photo = "https://dashboard.luxand.cloud/img/angelina-and-brad.jpg")
+
+print(result)
+
+
+
 ## pulling key from .env file
 API_KEY = os.environ.get("rapid_api_key")
-
+photo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F06%2FMorgan_Freeman%252C_2006_%2528cropped%2529.jpg
 
 ## code snippet taken from luxand.cloud facial recognition
 
 url = "https://luxand-cloud-face-recognition.p.rapidapi.com/photo/detect"
 
-payload = "photo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F06%2FMorgan_Freeman%252C_2006_%2528cropped%2529.jpg"    ## add photo file name/path here - will need to connect to file structure eventually using code at the bottom
+payload = ""    ## add photo file name/path here - will need to connect to file structure eventually using code at the bottom
 headers = {
     'x-rapidapi-host': "luxand-cloud-face-recognition.p.rapidapi.com",
     'x-rapidapi-key': API_KEY,
