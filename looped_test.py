@@ -4,6 +4,7 @@ import requests
 import itertools
 from operator import itemgetter
 import time
+from collections import Counter
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -43,7 +44,10 @@ for single_pic in picture_data:
             gender_list.append(label)
         if label["type"] == "ethnicity":
             eth_list.append(label)
-    time.sleep(1)
+    # need timer due to concurrent facial recongition limits
+    time.sleep(1) ## https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
+
+
 
 conf_gender_list = []
 conf_eth_list = []
@@ -60,8 +64,51 @@ for y in eth_list:
     else:
         conf_eth_list.append(y["label"])
 
-print(conf_eth_list)
-print(conf_gender_list)
+#https://stackoverflow.com/questions/23240969/python-count-repeated-elements-in-the-list/23240989
+
+counted_gender = dict(Counter(conf_gender_list))
+counted_eth = dict(Counter(conf_eth_list))
+
+#print(counted_eth)
+#print(counted_gender)
+
+#print(conf_eth_list)
+#print(conf_gender_list)
+
+
+## gender data
+
+percent_female = (float(counted_gender["female"]/len(conf_gender_list)))*100
+percent_male = (float(counted_gender["male"]/len(conf_gender_list)))*100
+
+diff_female = percent_female - 50.8
+diff_male = percent_male - 49.2
+
+
+print("Analysis Complete")
+print("-----------------------------------")
+print("Here is the data breakdown")
+print("Female - US Average: 50.8%")
+print(f"Female - Your Data: {percent_female:.2f}%")
+print("Male - US Average: 49.2%")
+print(f"Male - Your Data: {percent_male:.2f}%")
+print(f"Your data for females differs from the national average by: {diff_female:.2f}%")
+print(f"Your data for males differs from the national average by: {diff_male:.2}%")
+
+## eth data
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
