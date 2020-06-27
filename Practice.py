@@ -51,15 +51,15 @@ type = []
 #for c in attribute:
  #   print(c['confidence'])
 
-sorted_attribute = sorted(attribute, key=itemgetter("type"))
+sorted_attribute = sorted(attribute, key=itemgetter("label"))
 #pprint(sorted_attribute)
 
-confidence_by_type = itertools.groupby(sorted_attribute, key=itemgetter("type")) 
-for type, types in confidence_by_type:
+confidence_by_label = itertools.groupby(sorted_attribute, key=itemgetter("label")) 
+for label, labels in confidence_by_label:
     print("----------------------------")
-    print(type + ":")
-    for type in types:
-        print(type["confidence"])
+    print(label + ":")
+    for label in labels:
+        print(label["confidence"])
 
 
 
