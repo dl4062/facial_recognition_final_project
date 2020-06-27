@@ -5,7 +5,8 @@ load_dotenv() #> loads contents of the .env file into the script's environment
 
 import requests
 import json
-import operator
+import itertools
+from operator import itemgetter
 from pprint import pprint
 
 api_key = os.environ.get("api_key")
@@ -39,33 +40,26 @@ results = parsed_response['result']
 attribute = results['faces'][0]['attributes']
 #pprint(attribute)
 
-for p in attribute:
-    pprint(['confidence']['label'][2])
+#print(type(attribute)) --> list
 
+type = []
 
+#for t in attribute:
+ #   type.append(t["type"])
+#pprint(type)
 
+#for c in attribute:
+ #   print(c['confidence'])
 
+sorted_attribute = sorted(attribute, key=itemgetter("type"))
+#pprint(sorted_attribute)
 
-
-
-
-
-
-
-
-
-
-
-
-
-#pprint(parsed_response['result']['faces'][0])
-#pprint(parsed_response['result']['faces'][0]['attributes'])
-
-#print(face_results)
-#print(type(face_results)) ---> list 
-#print(type(face_results["faces"])) --> list 
-
-
+confidence_by_type = itertools.groupby(sorted_attribute, key=itemgetter("type")) 
+for type, types in confidence_by_type:
+    print("----------------------------")
+    print(type + ":")
+    for type in types:
+        print(type["confidence"])
 
 
 
