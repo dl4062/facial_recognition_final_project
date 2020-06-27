@@ -7,6 +7,22 @@ from operator import itemgetter
 from dotenv import load_dotenv
 load_dotenv()
 
+## photo locator
+
+data = os.path.join(os.path.dirname(__file__), "Data", "Test_Folder_1")  ## TODO add folder selector code
+
+
+picture_data = (os.listdir(data))
+for single_pic in picture_data:
+    
+
+
+
+
+'''
+
+## facial recognition code
+
 image_location = os.path.join(os.path.dirname(__file__), "Data", "Test_Folder_1", "Morgan_Freeman.jpg")
 
 ## https://docs.imagga.com/#uploads
@@ -81,3 +97,4 @@ for label, labels in confidence_by_label:
 
 
 #print(response.json())
+'''
