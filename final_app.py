@@ -93,14 +93,15 @@ diff_female = percent_female - 50.8
 diff_male = percent_male - 49.2
 
 print("Analysis Complete")
-print("-----------------------------------")
+print("--------------------------------------------")
 print("Here is the gender data breakdown")
-print("Female - US Average: 50.8%")
+print("Female - Recommended Average: 50.0%")
 print(f"Female - Your Data: {percent_female:.1f}%")
-print("Male - US Average: 49.2%")
+print("Male - Recommended Average: 50.0%")
 print(f"Male - Your Data: {percent_male:.1f}%")
-print(f"Your data for females differs from the national average by: {diff_female:.1f}%")
-print(f"Your data for males differs from the national average by: {diff_male:.1f}%")
+print("--------------------------------------------")
+print(f"Your data for females differs from the recommended average by: {diff_female:.1f}%")
+print(f"Your data for males differs from the recommended average by: {diff_male:.1f}%")
 
 ## eth data
 
@@ -110,37 +111,41 @@ percent_latino = (float(counted_eth["latino"]/len(conf_eth_list)))*100
 percent_CND = (float(counted_eth["Could not determine"]/len(conf_eth_list)))* 100
 percent_asian = (float((counted_eth["east asian"]+counted_eth["east indian"])/len(conf_gender_list)))* 100
 
-diff_caucasian = percent_caucasian - 60.4
-diff_afroamerican = percent_afroamerican - 13.4
-diff_latino = percent_latino - 18.3
-diff_asian = percent_asian - 5.9
+diff_caucasian = percent_caucasian - 25.0
+diff_afroamerican = percent_afroamerican - 25.0
+diff_latino = percent_latino - 25.0
+diff_asian = percent_asian - 25.0
 
 print("Here is the ethniticy data breakdown")
-print("Caucasian - US Average: 60.4%")
+print("--------------------------------------------")
+print("Caucasian - Recommended Average: 25.0%")
 print(f"Caucasian - Your Data: {percent_caucasian:.1f}%")
-print("Afroamerican - US Average: 13.4%")
+print("Afroamerican - Recommended Average: 25.0%")
 print(f"Afroamerican - Your Data: {percent_afroamerican:.1f}%")
-print("Latino - US Average: 18.3%")
+print("Latino - Recommended Average: 25.0%")
 print(f"Latino - Your Data: {percent_latino:.1f}%")
-print("Asian - US Average: 5.9%")
+print("Asian - Recommended Average: 25.0%")
 print(f"Asian - Your Data: {percent_asian:.1f}%")
-print(f"Your data for Caucasians differs from the national average by: {diff_caucasian:.1f}%")
-print(f"Your data for Afroamercians differs from the national average by: {diff_afroamerican:.1f}%")
-print(f"Your data for Latinos differs from the national average by: {diff_latino:.1f}%")
-print(f"Your data for Asians differs from the national average by: {diff_asian:.1f}%")
+print("--------------------------------------------")
+print(f"Your data for Caucasians differs from the recommended average by: {diff_caucasian:.1f}%")
+print(f"Your data for Afroamercians differs from the recommended average by: {diff_afroamerican:.1f}%")
+print(f"Your data for Latinos differs from the recommended average by: {diff_latino:.1f}%")
+print(f"Your data for Asians differs from the recommended average by: {diff_asian:.1f}%")
+print("--------------------------------------------")
 print(f"The API could not determine the following ethnicity for {percent_CND:.1f}% of the data")
 
 ## recommendation
 threshold = 5
+print("--------------------------------------------")
 print("Final Recommendations")
-print("-----------------------")
+print("--------------------------------------------")
 if diff_female > threshold or diff_male > threshold:
-    print("This data does not have the recommended gender mix, cannot recommend this data")
+    print("This data does not have the recommended gender mix, we cannot recommend this data")
 else:
     print("This data has the recommended gender mix")
 
 if diff_caucasian > threshold or diff_afroamerican > threshold or diff_latino > threshold or diff_asian > threshold:
-    print("This data's diversity does not mirror that of the the US, we cannot recommend you use this data")
+    print("This data's diversity does not have the recommended mix, we cannot recommend you use this data")
 else:
     print(f"This data has the recommended data mix, however {percent_CND:.1f}% of the data could not be determined")
 
