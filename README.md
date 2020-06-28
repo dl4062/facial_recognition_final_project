@@ -1,10 +1,10 @@
 # Facial Recognition Freestyle Project
 
-This repo will help you determine the diversity of your data set using the imagga API. 
+This repo will help you determine the diversity a group of photos using the imagga API. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine.
 
 ### Installing
 
@@ -14,6 +14,7 @@ The requirements.txt file includes the modules you will need to install to run t
 
 ''' 
 conda create -n project-env python=3.7 # (first time only)
+'''
 conda activate project-env
 ```
 pip install -r requirements.txt
@@ -27,6 +28,7 @@ Once you have your API key and API secret, create a .env file and add the keys i
 
 '''
 api_key = 'Enter your API key here'
+'''
 api_secret = 'Enter your API secret here'
 ''
 
