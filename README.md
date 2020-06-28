@@ -15,10 +15,14 @@ The requirements.txt file includes the modules you will need to install to run t
 ''' 
 conda create -n project-env python=3.7 # (first time only)
 '''
+
+'''
 conda activate project-env
-```
+'''
+
+'''
 pip install -r requirements.txt
-```
+'''
 
 ### Set-up
 
@@ -29,8 +33,10 @@ Once you have your API key and API secret, create a .env file and add the keys i
 '''
 api_key = 'Enter your API key here'
 '''
+
+'''
 api_secret = 'Enter your API secret here'
-''
+'''
 
 Create a subfolder in the Data folder and place the photo set you would like to analyze in your subfolder. You can create as many subfolders as you would like but you can only analyze one folder at a time. 
 
