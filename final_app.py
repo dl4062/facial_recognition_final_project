@@ -18,7 +18,7 @@ face_data = (os.listdir(data))
 for folder in face_data:
     print(folder)
 
-choice = input("Please select a data package to analyze: ")
+choice = input("Please select a data package to analyze from the above list: ")
 
 ## data validation part
 
@@ -115,9 +115,10 @@ diff_caucasian = percent_caucasian - 25.0
 diff_afroamerican = percent_afroamerican - 25.0
 diff_latino = percent_latino - 25.0
 diff_asian = percent_asian - 25.0
-
+print("-------------------------------------------")
+print("-------------------------------------------")
 print("Here is the ethniticy data breakdown")
-print("--------------------------------------------")
+print("-------------------------------------------")
 print("Caucasian - Recommended Average: 25.0%")
 print(f"Caucasian - Your Data: {percent_caucasian:.1f}%")
 print("Afroamerican - Recommended Average: 25.0%")
