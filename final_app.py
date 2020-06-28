@@ -26,19 +26,19 @@ while os.path.exists(os.path.join(data, choice)) == False:
     if os.path.exists(os.path.join(data, choice)) == False:
         choice = input("This data package does not exist in the Data folder - Please select a data package from the specified list, or add a new data package and run the application again: ")
     else:
-        break
+        print("Please wait while the data is processing, it will take approx 1 second per picture")
 
 print("Please wait while the data is processing, it will take approx 1 second per picture")
 ## photo locator
 
-data = os.path.join(os.path.dirname(__file__), "Data", "Test_Folder_1")  ## TODO add folder selector code
-gender_list = []
+data = os.path.join(os.path.dirname(__file__), "Data", choice)  
 eth_list = []
-## TODO add folder selector
+gender_list = []
+
 ## loops through folder, sends through API, and spits out data
 picture_data = (os.listdir(data))
 for single_pic in picture_data:
-    image_location = os.path.join(os.path.dirname(__file__), "Data", "Test_Folder_1", single_pic)
+    image_location = os.path.join(os.path.dirname(__file__), "Data", choice, single_pic)
     image_path = image_location
     response = requests.post(
         'https://api.imagga.com/v2/uploads',
