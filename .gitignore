@@ -1,5 +1,8 @@
 # ignore secret environment variable values in the ".env" file:
 .env
+image_upload.py
+old_app.py
+practice.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

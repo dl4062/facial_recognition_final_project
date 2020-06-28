@@ -1,6 +1,6 @@
 # Facial Recognition Freestyle Project
 
-One Paragraph of project description goes here
+This repo will help you determine the diversity of your data set using the imagga API. 
 
 ## Getting Started
 
@@ -20,6 +20,15 @@ pip install -r requirements.txt
 ```
 
 ### Set-up
+
+Request an API key from the following website: https://imagga.com/
+
+Once you have your API key and API secret, create a .env file and add the keys in the appropriate global variables:
+
+'''
+api_key = 'Enter your API key here'
+api_secret = 'Enter your API secret here'
+''
 
 Create a subfolder in the Data folder and place the photo set you would like to analyze in your subfolder. You can create as many subfolders as you would like but you can only analyze one folder at a time. 
 
