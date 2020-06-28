@@ -12,17 +12,11 @@ After cloning the repo, you will need to set up a virtual environment on your ma
 
 The requirements.txt file includes the modules you will need to install to run this program.  Enter the below code in your command line to set up the appropriate virtual environment. 
 
-''' 
+```
 conda create -n project-env python=3.7 # (first time only)
-'''
-
-'''
 conda activate project-env
-'''
-
-'''
 pip install -r requirements.txt
-'''
+```
 
 ### Set-up
 
@@ -30,13 +24,10 @@ Request an API key from the following website: https://imagga.com/
 
 Once you have your API key and API secret, create a .env file and add the keys in the appropriate global variables:
 
-'''
+```
 api_key = 'Enter your API key here'
-'''
-
-'''
 api_secret = 'Enter your API secret here'
-'''
+```
 
 Create a subfolder in the Data folder and place the photo set you would like to analyze in your subfolder. You can create as many subfolders as you would like but you can only analyze one folder at a time. 
 
